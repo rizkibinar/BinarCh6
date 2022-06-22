@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@color/teal_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        tools:text="Binar Academy"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_logo"
+        app:layout_constraintTop_toTopOf="@+id/iv_logo" />
+
+    <TextView
+        android:id="@+id/tv_dev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_logo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="Binar" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="11sp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_dev"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="Education" />
+
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_dev"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dev"
+        tools:text="4.5" />
+
+    <ImageView
+        android:id="@+id/iv_rating"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rating"
+        app:layout_constraintStart_toEndOf="@+id/tv_rating"
+        app:layout_constraintTop_toTopOf="@+id/tv_rating" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
