@@ -1,5 +1,6 @@
 package id.co.rizki.binarch6
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,6 +17,14 @@ class OnBoardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_pager)
+
+        val isOnBoardShown = SharedPrefManager.getIsOnBoardingShown(this)
+        if(isOnBoardShown) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }
 
         viewPager = findViewById(R.id.viewpager)
 

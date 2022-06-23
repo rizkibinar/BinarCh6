@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import id.co.rizki.binarch6.MainActivity
+import id.co.rizki.binarch6.SharedPrefManager
 import id.co.rizki.binarch6.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
@@ -21,6 +22,8 @@ class SecondFragment : Fragment() {
         binding.btnStart.setOnClickListener {
             startActivity(Intent(requireActivity(),MainActivity::class.java))
             requireActivity().finish()
+
+            SharedPrefManager.setIsOnBoardingShown(requireActivity(), true)
         }
 
         return binding.root

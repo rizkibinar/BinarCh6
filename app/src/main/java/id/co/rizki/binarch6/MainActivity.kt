@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding.rvList.adapter = ListAdapter(getDummyData())
         binding.rvList.layoutManager = LinearLayoutManager(this)
 
-
-
     }
 
     private fun getDummyData() : ArrayList<StoreItem> {
