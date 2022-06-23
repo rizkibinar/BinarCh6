@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.co.rizki.binarch6.databinding.ActivityMainBinding
 import id.co.rizki.binarch6.model.StoreItem
@@ -22,7 +23,9 @@ class MainActivity : AppCompatActivity() {
 
 
         //step 4 implement recyclerview, set adapter ke recyclerview dan set layoutmanager
-        binding.rvList.adapter = ListAdapter(getDummyData())
+        binding.rvList.adapter = ListAdapter(getDummyData()) {
+            Toast.makeText(this, "Item di click : ${it.name}", Toast.LENGTH_SHORT).show()
+        }
         binding.rvList.layoutManager = LinearLayoutManager(this)
 
     }

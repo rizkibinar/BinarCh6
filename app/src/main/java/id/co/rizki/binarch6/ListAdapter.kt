@@ -13,7 +13,7 @@ import id.co.rizki.binarch6.model.StoreItem
  */
 
 //step 3 implement recyclerview, bikin adapter
-class ListAdapter(private val listStoreItem: ArrayList<StoreItem>) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter(private val listStoreItem: ArrayList<StoreItem>,val onItemStoreClick: (StoreItem) -> Unit) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     class ViewHolder(private val storeBinding: ItemStoreBinding) : RecyclerView.ViewHolder(storeBinding.root) {
         fun bind(storeItem: StoreItem) {
@@ -29,12 +29,15 @@ class ListAdapter(private val listStoreItem: ArrayList<StoreItem>) : RecyclerVie
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = ItemStoreBinding.inflate(LayoutInflater.from(parent.context))
+        val view = ItemStoreBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item : StoreItem = listStoreItem[position]
+        holder.itemView.setOnClickListener {
+            onItemStoreClick(item)
+        }
         holder.bind(item)
     }
 
